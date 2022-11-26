@@ -3,7 +3,7 @@ arr = ["Daisy","Rose","Hyacinth","Poppy"]
 
 #Solution
 
-#function which does the job but it requires length of the longest string 
+#function which does the job but it requires length of the longest element 
 #and input should be of string type and not a list type
 charBuffer = []
 def processWords(input,maxLen):
