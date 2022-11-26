@@ -1,31 +1,43 @@
+# given list: arr, Requirement : DRHPaoyoisapsecpyiynth
 arr = ["Daisy","Rose","Hyacinth","Poppy"]
-myarr=[]
-maxLength = len(max(arr, key=len))
 
-for str1 in arr:
-    if len(str1) < maxLength:
-        count = len(str1)
-        while count < maxLength:
-            str1 += '*'
-            count+=1
-        myarr.append(str1)
-    else:
-        myarr.append(str1)
-print(myarr)
-input = " ".join(map(str,myarr))
-print(input)
+#Solution
 
+#function which does the job but it requires length of the longest string 
+#and input should be of string type and not a list type
 charBuffer = []
-def processWords(input,maxlen):
+def processWords(input,maxLen):
     s = input.split(" ")
-    for i in range(0,maxlen):
+    for i in range(0,maxLen):
         for values in s:
-            if values[i] == '0':
+            #ignoring dummy symbol '*' 
+            if values[i] == '*':
                 continue
             else:
                 charBuffer.append(values[i])
     return charBuffer
 
-#input = " ".join(map(str,arr))
-result = processWords(input,maxLength)
+#storing length of the longest element of arr list
+maxLength = len(max(arr, key=len))
+# creating an empty list
+myArr=[]
+#appending a dummy symbol '*' to make length of all elements equal to maxLength
+for element in arr:
+    if len(element) < maxLength:
+        count = len(element)
+        while count < maxLength:
+            element += '*'
+            count+=1
+        myArr.append(element)
+    else:
+        myArr.append(element)
+
+#converting list arr into string inputArr
+inputArr = " ".join(map(str,myArr))
+
+#passing string inputArr and maxLength to our function and storing it in result
+result = processWords(inputArr,maxLength)
+
+#print result
 print(*result, sep = "")
+
