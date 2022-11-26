@@ -21,7 +21,8 @@ def processWords(input,maxLen):
 maxLength = len(max(arr, key=len))
 # creating an empty list
 myArr=[]
-#appending a dummy symbol '*' to make length of all elements equal to maxLength
+#appending all elements of arr into myArr and concatenating a dummy symbol '*' 
+#in elements whose length < maxLength before appending it to myArr
 for element in arr:
     if len(element) < maxLength:
         count = len(element)
